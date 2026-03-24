@@ -1,0 +1,107 @@
+@import "@/styles/variables.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-8;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-2;
+  font-family: $font-inter;
+  font-size: 0.875rem;
+  color: $on-surface-variant;
+  margin-bottom: $spacing-4;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $on-surface;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.headerActions {
+  display: flex;
+  gap: $spacing-4;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: $on-surface;
+  margin-bottom: $spacing-1;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: $on-surface-variant;
+}
+
+.formGrid {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-6;
+}
+
+.sectionCard {
+  background-color: $surface-container-lowest;
+  padding: $spacing-6;
+  border-radius: 16px;
+  @include ambient-shadow;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4;
+
+  h2 {
+    font-size: 1.25rem;
+    color: $on-surface;
+    margin-bottom: $spacing-2;
+  }
+}
+
+.inputGroup {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: $spacing-4;
+}
+
+.lineItemHeader {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: $spacing-4;
+  font-family: $font-inter;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $on-surface-variant;
+  padding-bottom: $spacing-2;
+  border-bottom: 1px solid rgba(197, 198, 205, 0.3);
+}
+
+.lineItemRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: $spacing-4;
+  align-items: center;
+  padding-top: $spacing-2;
+}
+
+.subtotal {
+  font-family: $font-jetbrains;
+  font-size: 0.875rem;
+  color: $on-surface;
+  text-align: right;
+  padding-right: $spacing-4;
+}
+
+.addItemBtn {
+  align-self: flex-start;
+  margin-top: $spacing-2;
+}

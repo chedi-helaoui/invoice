@@ -1,0 +1,73 @@
+@import "@/styles/variables.scss";
+
+// Use surface-container-lowest. Place a subtle primary glow (5% opacity) 
+// in the top right corner to draw attention.
+
+.card {
+  position: relative;
+  background-color: $surface-container-lowest;
+  padding: $spacing-6;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4;
+  
+  // Ambient shadow
+  @include ambient-shadow;
+}
+
+.glow {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.05) 0%, rgba(245, 158, 11, 0) 70%);
+  pointer-events: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-family: $font-inter;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $on-surface-variant;
+}
+
+.iconWrapper {
+  color: $primary-container;
+}
+
+.content {
+  display: flex;
+  align-items: baseline;
+  gap: $spacing-3;
+}
+
+.value {
+  font-family: $font-manrope;
+  font-size: 2rem;
+  font-weight: 700;
+  color: $on-surface;
+  letter-spacing: -0.02em;
+}
+
+.trend {
+  font-family: $font-jetbrains;
+  font-size: 0.75rem;
+}
+
+.positive {
+  color: #008a00;
+}
+
+.negative {
+  color: #ba1a1a;
+}

@@ -1,0 +1,56 @@
+@import "@/styles/variables.scss";
+
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+}
+
+// Forbid horizontal and vertical divider lines
+// Use a 0.5rem vertical gap between rows
+// Give every second row a background of surface-container-low (Zebra striping)
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 $spacing-2;
+  text-align: left;
+
+  th {
+    font-family: $font-inter;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $on-surface-variant;
+    padding: $spacing-3 $spacing-4;
+    border: none;
+  }
+
+  td {
+    padding: $spacing-4;
+    background-color: $surface;
+    font-family: $font-inter;
+    font-size: 0.875rem;
+    color: $on-surface;
+    border: none;
+    
+    &:first-child {
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+    
+    &:last-child {
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+  }
+
+  tr:nth-child(even) td {
+    background-color: $surface-container-low;
+  }
+}
+
+.numericCell {
+  text-align: right;
+  font-family: $font-jetbrains;
+}

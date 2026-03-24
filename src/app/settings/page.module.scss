@@ -1,0 +1,523 @@
+@import "@/styles/_variables.scss";
+
+
+
+.container {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: $spacing-10;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-family: var(--font-manrope);
+  font-weight: 800;
+  color: $tertiary;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+.subtitle {
+  color: $on-surface-variant;
+  font-size: 0.875rem;
+  margin-top: $spacing-1;
+}
+
+.saveButton {
+  padding: $spacing-2 $spacing-6;
+  background-color: $tertiary;
+  color: white;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(11, 20, 38, 0.1);
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: lighten($tertiary, 10%);
+  }
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-8;
+}
+
+.col4 {
+  width: calc(33.333% - ($spacing-8 * 2 / 3));
+}
+
+.col6 {
+  width: calc(50% - ($spacing-8 / 2));
+}
+
+.col8 {
+  width: calc(66.666% - ($spacing-8 * 1 / 3));
+}
+
+.colFull {
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+
+  .col4,
+  .col6,
+  .col8,
+  .colFull {
+    width: 100%;
+  }
+}
+
+.section {
+  background-color: $surface-container-lowest;
+  border-radius: 2rem;
+  padding: $spacing-8;
+  border: 1px solid rgba($outline-variant, 0.1);
+  @include ambient-shadow;
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: $spacing-3;
+  margin-bottom: $spacing-8;
+}
+
+.sectionIcon {
+  color: #f59e0b; // gold-accent
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-family: var(--font-manrope);
+  font-weight: 700;
+  color: $tertiary;
+  margin: 0;
+}
+
+.formGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-6;
+}
+
+.formGroupSpan2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+
+  label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $on-surface-variant;
+  }
+}
+
+.formGroupSpan2Md1 {
+  width: calc(50% - ($spacing-6 / 2));
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $on-surface-variant;
+  }
+}
+
+:global(input[type="text"]),
+:global(input[type="password"]),
+:global(textarea),
+:global(select) {
+  width: 100%;
+  background-color: $surface-container-highest;
+  border: none;
+  border-radius: 0.75rem;
+  padding: $spacing-3 $spacing-4;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $on-surface;
+  transition: box-shadow 0.2s;
+  box-sizing: border-box;
+  font-family: inherit;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+  }
+}
+
+.monoInput {
+  font-family: var(--font-jetbrains-mono) !important;
+}
+
+.logoUploadContainer {
+  display: flex;
+  align-items: center;
+  gap: $spacing-6;
+  margin-top: $spacing-2;
+}
+
+.logoPreview {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 1rem;
+  background-color: $surface-container-highest;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed $outline-variant;
+  overflow: hidden;
+  color: #cad1d8;
+}
+
+.logoInfo {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+
+  p {
+    font-size: 0.625rem;
+    color: $on-surface-variant;
+    margin: 0;
+  }
+}
+
+.uploadButton {
+  padding: $spacing-2 $spacing-4;
+  background-color: $surface-container;
+  color: $tertiary;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  display: inline-block;
+
+  &:hover {
+    background-color: $surface-dim;
+  }
+}
+
+.financialForm {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-6;
+  flex: 1;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+
+  label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $on-surface-variant;
+  }
+}
+
+.inputWithSuffix {
+  position: relative;
+
+  .suffix {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $on-surface-variant;
+    font-size: 0.875rem;
+  }
+}
+
+.sectionFooter {
+  margin-top: $spacing-8;
+  padding-top: $spacing-6;
+  border-top: 1px solid rgba($outline-variant, 0.1);
+
+  p {
+    font-size: 0.625rem;
+    line-height: 1.6;
+    color: $on-surface-variant;
+    font-style: italic;
+    margin: 0;
+  }
+}
+
+.optionsList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4;
+}
+
+.optionItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-4;
+  background-color: $surface;
+  border-radius: 1rem;
+
+  .optionTitle {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: $tertiary;
+    margin: 0;
+  }
+
+  .optionDesc {
+    font-size: 0.6875rem;
+    color: $on-surface-variant;
+    margin: 0;
+  }
+}
+
+/* Custom Checkbox as Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 2.75rem;
+  height: 1.5rem;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked+.slider {
+      background-color: #f59e0b;
+    }
+
+    &:checked+.slider:before {
+      transform: translateX(1.25rem);
+    }
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $surface-container-highest;
+    transition: .4s;
+    border-radius: 1.5rem;
+
+    &:before {
+      position: absolute;
+      content: "";
+      height: 1.25rem;
+      width: 1.25rem;
+      left: 0.125rem;
+      bottom: 0.125rem;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+  }
+}
+
+/* Security Vault Customizations */
+.securityForm {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-6;
+}
+
+.twoFactorBanner {
+  padding: $spacing-6;
+  background-color: $tertiary;
+  color: white;
+  border-radius: 1.5rem;
+  position: relative;
+  overflow: hidden;
+
+  .twoFactorContent {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .twoFactorTitle {
+      font-size: 0.875rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .twoFactorDesc {
+      font-size: 0.6875rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin: $spacing-1 0 0;
+    }
+  }
+
+  .bgIcon {
+    position: absolute;
+    right: -1rem;
+    bottom: -1rem;
+    opacity: 0.1;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover .bgIcon {
+    transform: scale(1.1);
+  }
+}
+
+.switchAlt {
+  @extend .switch;
+
+  input:checked+.slider {
+    background-color: #f59e0b;
+  }
+
+  .slider {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.credentialsLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $on-surface-variant;
+  margin-bottom: $spacing-3;
+}
+
+.credentialsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-4;
+  margin-bottom: $spacing-4;
+
+  >div {
+    width: calc(50% - ($spacing-4 / 2));
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    &.colFull {
+      width: 100%;
+    }
+  }
+
+  input {
+    background-color: $surface;
+    border: 1px solid rgba($outline-variant, 0.2);
+  }
+}
+
+.textLink {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #f59e0b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.2s;
+
+  &:hover {
+    color: darken(#f59e0b, 10%);
+  }
+}
+
+.dangerSection {
+  grid-column: span 12;
+  width: 100%;
+  padding: $spacing-8;
+  background-color: rgba($error-container, 0.2);
+  border-radius: 2rem;
+  border: 2px dashed rgba($error, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-6;
+  }
+}
+
+.dangerContent {
+  display: flex;
+  align-items: center;
+  gap: $spacing-6;
+}
+
+.dangerIconWrapper {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: $error-container;
+  color: $error;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dangerTitle {
+  font-size: 1.125rem;
+  font-family: var(--font-manrope);
+  font-weight: 700;
+  color: $tertiary;
+  margin: 0;
+}
+
+.dangerDesc {
+  font-size: 0.875rem;
+  color: $on-surface-variant;
+  margin: 0;
+}
+
+.dangerButton {
+  padding: $spacing-3 $spacing-6;
+  background: transparent;
+  border: 2px solid $error;
+  color: $error;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $error;
+    color: white;
+  }
+}

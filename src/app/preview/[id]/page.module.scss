@@ -1,0 +1,213 @@
+@import "@/styles/variables.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-8;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-2;
+  font-family: $font-inter;
+  font-size: 0.875rem;
+  color: $on-surface-variant;
+  margin-bottom: $spacing-4;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $on-surface;
+  }
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: $spacing-4;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: $on-surface;
+  font-family: $font-jetbrains;
+}
+
+.headerActions {
+  display: flex;
+  gap: $spacing-4;
+}
+
+/* 
+  The Layering Principle: Stack surfaces like sheets of fine paper. 
+  An invoice detail view (using surface-container-highest) should sit 
+  atop the main table (surface-container-low).
+*/
+.paper {
+  background-color: $surface-container-highest;
+  padding: $spacing-8;
+  border-radius: 8px;
+  @include ambient-shadow;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-8;
+  
+  // Impart an off-white slight tone
+}
+
+.paperHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.companyInfo {
+  display: flex;
+  gap: $spacing-4;
+  align-items: flex-start;
+}
+
+.logoMark {
+  width: 48px;
+  height: 48px;
+  background-color: $tertiary;
+  border-radius: 8px;
+}
+
+.companyDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: $font-inter;
+  font-size: 0.875rem;
+  color: $on-surface-variant;
+
+  strong {
+    color: $on-surface;
+    font-size: 1rem;
+    font-family: $font-manrope;
+  }
+}
+
+.invoiceMeta {
+  display: flex;
+  gap: $spacing-8;
+  text-align: right;
+}
+
+.metaBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metaLabel {
+  font-family: $font-inter;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $on-surface-variant;
+}
+
+.metaValue {
+  font-family: $font-jetbrains;
+  font-size: 0.875rem;
+  color: $on-surface;
+  font-weight: 500;
+}
+
+.billTo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: $font-inter;
+  font-size: 0.875rem;
+  color: $on-surface-variant;
+
+  strong {
+    color: $on-surface;
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+}
+
+.invoiceTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: $spacing-4;
+
+  th {
+    font-family: $font-inter;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $on-surface-variant;
+    padding: $spacing-3 0;
+    border-bottom: 2px solid rgba(197, 198, 205, 0.3);
+    text-align: left;
+  }
+
+  td {
+    padding: $spacing-4 0;
+    font-family: $font-inter;
+    font-size: 0.875rem;
+    color: $on-surface;
+    border-bottom: 1px solid rgba(197, 198, 205, 0.15);
+  }
+
+  .rightAlign {
+    text-align: right;
+    font-family: $font-jetbrains;
+  }
+}
+
+.totals {
+  align-self: flex-end;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-3;
+  margin-top: $spacing-4;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  font-family: $font-inter;
+  font-size: 0.875rem;
+  color: $on-surface-variant;
+  
+  span:last-child {
+    font-family: $font-jetbrains;
+    color: $on-surface;
+  }
+}
+
+.grandTotal {
+  display: flex;
+  justify-content: space-between;
+  padding-top: $spacing-3;
+  border-top: 1px solid rgba(197, 198, 205, 0.3);
+  font-family: $font-manrope;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $primary-container;
+
+  span:last-child {
+    font-family: $font-jetbrains;
+  }
+}

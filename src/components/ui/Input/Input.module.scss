@@ -1,0 +1,48 @@
+@import "@/styles/variables.scss";
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+  width: 100%;
+}
+
+.label {
+  font-family: $font-inter;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $on-surface-variant;
+}
+
+.input {
+  // Use surface-container-highest for the input background with a Ghost Border on focus
+  // No bottom-line only inputs; we want a structured, "filled" feel.
+  background-color: $surface-container-highest;
+  border: 1px solid transparent; // Invisible at first, ghost border on focus
+  border-radius: 8px;
+  padding: $spacing-3 $spacing-4;
+  font-family: $font-inter;
+  font-size: 0.875rem;
+  color: $on-surface;
+  outline: none;
+  transition: all 0.2s ease;
+
+  &::placeholder {
+    color: rgba(69, 71, 76, 0.5); // on-surface-variant subtle
+  }
+
+  &:focus {
+    @include ghost-border;
+    background-color: $surface-container-lowest;
+  }
+}
+
+.hasError {
+  border: 1px solid $error-container;
+}
+
+.errorMessage {
+  font-family: $font-inter;
+  font-size: 0.75rem;
+  color: #ba1a1a;
+}

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings | Fiscal Atelier</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-container": "#586377",
+                        "secondary-fixed": "#d8e3fb",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "primary": "#201100",
+                        "on-primary-container": "#c98000",
+                        "on-primary-fixed": "#2a1700",
+                        "surface-container": "#eceef0",
+                        "tertiary": "#0b1426",
+                        "on-surface": "#191c1e",
+                        "surface-container-high": "#e6e8ea",
+                        "background": "#f7f9fb",
+                        "surface-dim": "#d8dadc",
+                        "surface": "#f7f9fb",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "outline-variant": "#c5c6cd",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "on-surface-variant": "#45474c",
+                        "surface-bright": "#f7f9fb",
+                        "primary-fixed-dim": "#ffb95f",
+                        "primary-container": "#3c2300",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#dae2fd",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#855300",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffddb8",
+                        "on-tertiary-container": "#888fa7",
+                        "tertiary-container": "#20283c",
+                        "secondary-container": "#d5e0f8",
+                        "on-background": "#191c1e",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary-fixed": "#131b2e",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "inverse-primary": "#ffb95f",
+                        "secondary": "#545f73",
+                        "inverse-surface": "#2d3133",
+                        "on-primary-fixed-variant": "#653e00",
+                        "on-secondary-fixed": "#111c2d",
+                        "on-secondary": "#ffffff",
+                        "outline": "#75777d",
+                        "gold-accent": "#f59e0b"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "mono": ["JetBrains Mono"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .headline-font { font-family: 'Manrope', sans-serif; }
+        .mono-font { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Custom Toggle Style */
+        .toggle-checkbox:checked {
+            right: 0;
+            background-color: #f59e0b;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #f59e0b;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- SideNavBar (Authority: JSON) -->
+<aside class="bg-slate-900 dark:bg-slate-950 h-screen w-64 fixed left-0 top-0 overflow-y-auto shadow-2xl shadow-slate-950/20 z-50 flex flex-col p-4 gap-2">
+<div class="mb-8 px-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-gold-accent flex items-center justify-center shadow-lg shadow-gold-accent/20">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<div>
+<h1 class="text-lg font-black tracking-tight text-white leading-none">Fiscal Atelier</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold mt-1">Sovereign Ledger</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white transition-colors hover:bg-slate-800/50" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-sm font-inter">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white transition-colors hover:bg-slate-800/50" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="text-sm font-inter">Invoices</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white transition-colors hover:bg-slate-800/50" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-sm font-inter">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white transition-colors hover:bg-slate-800/50" href="#">
+<span class="material-symbols-outlined" data-icon="insert_chart">insert_chart</span>
+<span class="text-sm font-inter">Reports</span>
+</a>
+<!-- Active State for Settings Page -->
+<a class="flex items-center gap-3 px-4 py-3 bg-slate-800 dark:bg-slate-900 text-amber-500 rounded-lg transition-all duration-200 scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="text-sm font-bold font-inter">Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-4 border-t border-slate-800">
+<button class="w-full py-3 bg-gold-accent hover:bg-amber-600 text-tertiary font-bold rounded-xl transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+<span class="text-sm">New Invoice</span>
+</button>
+</div>
+</aside>
+<!-- TopAppBar (Authority: JSON) -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl h-16 px-8 flex justify-between items-center no-border">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-amber-500/20 transition-all" placeholder="Search preferences..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<button class="hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full p-2 text-slate-500">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full p-2 text-slate-500">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-slate-200"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-xs font-bold text-tertiary leading-tight">Julian Thorne</p>
+<p class="text-[10px] text-slate-500 uppercase tracking-tighter font-mono">Principal Admin</p>
+</div>
+<img alt="User Profile Avatar" class="w-10 h-10 rounded-full object-cover border-2 border-surface-container-high" data-alt="Close up portrait of a professional man in a dark suit with a neutral confident expression in a studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrGsvFQo3TxgOA8GvrGEVowah6EmSQGAzTQo2wep8Waw6vT_6QgxYgVJ5RjT2D7zaVYg-RCSFHb0JL-P5i5QzpGvM0N6pwoYNG55LKUkLCgVsNFR8q65jRMzMMKT4-PfYsMgmjnM6BtmMSWfpcOWdr5RbCPuySh4ugvd0N6uK34Mn2ziCQKWCqHYcErXpbUUCEypSU1PBhetoCyntS3AeiraWHd4MD8bogzof_nZhii5UgsZhvPrRVIjDIp4azcbovpW-vzhccAGE1"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 pb-12 px-12">
+<div class="max-w-5xl mx-auto">
+<header class="mb-10 flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-headline font-extrabold text-tertiary tracking-tight">System Configuration</h2>
+<p class="text-on-surface-variant text-sm mt-1">Manage your professional identity and financial logic.</p>
+</div>
+<button class="px-6 py-2.5 bg-tertiary text-white rounded-xl text-sm font-semibold hover:bg-slate-800 transition-colors shadow-lg shadow-tertiary/10">
+                    Save Changes
+                </button>
+</header>
+<div class="grid grid-cols-12 gap-8">
+<!-- Business Profile Section (Bento Style) -->
+<section class="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-[2rem] p-8 shadow-sm border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-gold-accent">business_center</span>
+<h3 class="text-xl font-headline font-bold text-tertiary">Business Profile</h3>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-2 col-span-2 md:col-span-1">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Company Name</label>
+<input class="w-full bg-surface-container-high border-none rounded-xl py-3 px-4 text-sm font-medium focus:ring-2 focus:ring-gold-accent/20" type="text" value="Lumiere Ledger"/>
+</div>
+<div class="space-y-2 col-span-2 md:col-span-1">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">VAT Number</label>
+<input class="w-full mono-font bg-surface-container-high border-none rounded-xl py-3 px-4 text-sm focus:ring-2 focus:ring-gold-accent/20" type="text" value="GB 123 4567 89"/>
+</div>
+<div class="space-y-2 col-span-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Business Address</label>
+<textarea class="w-full bg-surface-container-high border-none rounded-xl py-3 px-4 text-sm focus:ring-2 focus:ring-gold-accent/20" rows="3">77 Editorial Square, Suite 400
+London, EC1V 2NX
+United Kingdom</textarea>
+</div>
+<div class="col-span-2 pt-4">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-3 block">Company Logo</label>
+<div class="flex items-center gap-6">
+<div class="w-24 h-24 rounded-2xl bg-surface-container-high flex items-center justify-center border-2 border-dashed border-outline-variant overflow-hidden">
+<span class="material-symbols-outlined text-slate-300 text-3xl">add_photo_alternate</span>
+</div>
+<div class="space-y-2">
+<button class="px-4 py-2 bg-surface-container text-tertiary text-xs font-bold rounded-lg hover:bg-surface-dim transition-colors">Upload New</button>
+<p class="text-[10px] text-on-surface-variant">SVG, PNG, or JPG (max. 2MB).<br/>Recommended: 400x400px</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Financial Preferences -->
+<section class="col-span-12 lg:col-span-4 bg-surface-container-lowest rounded-[2rem] p-8 shadow-sm border border-outline-variant/10 flex flex-col">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-gold-accent">payments</span>
+<h3 class="text-xl font-headline font-bold text-tertiary">Financial Logic</h3>
+</div>
+<div class="space-y-6 flex-1">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Default Currency</label>
+<select class="w-full bg-surface-container-high border-none rounded-xl py-3 px-4 text-sm font-medium focus:ring-2 focus:ring-gold-accent/20 appearance-none">
+<option>USD - United States Dollar</option>
+<option selected="">EUR - Euro</option>
+<option>GBP - British Pound</option>
+<option>AUD - Australian Dollar</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Default Tax Rate</label>
+<div class="relative">
+<input class="w-full mono-font bg-surface-container-high border-none rounded-xl py-3 px-4 text-sm focus:ring-2 focus:ring-gold-accent/20" type="text" value="20.00"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">%</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Payment Terms</label>
+<select class="w-full bg-surface-container-high border-none rounded-xl py-3 px-4 text-sm font-medium focus:ring-2 focus:ring-gold-accent/20 appearance-none">
+<option selected="">Net 30</option>
+<option>Net 15</option>
+<option>Due on Receipt</option>
+</select>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-outline-variant/10">
+<p class="text-[10px] leading-relaxed text-on-surface-variant italic">Changes here will apply to all future invoices by default.</p>
+</div>
+</section>
+<!-- Notification Settings -->
+<section class="col-span-12 lg:col-span-6 bg-surface-container-lowest rounded-[2rem] p-8 shadow-sm border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-gold-accent">notifications_active</span>
+<h3 class="text-xl font-headline font-bold text-tertiary">Communications</h3>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-surface rounded-2xl">
+<div>
+<p class="text-sm font-bold text-tertiary">Invoice Overdue</p>
+<p class="text-[11px] text-on-surface-variant">Alert me when a payment window expires.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gold-accent"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface rounded-2xl">
+<div>
+<p class="text-sm font-bold text-tertiary">Invoice Paid</p>
+<p class="text-[11px] text-on-surface-variant">Instant confirmation of client remittance.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gold-accent"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface rounded-2xl">
+<div>
+<p class="text-sm font-bold text-tertiary">Weekly Financial Summary</p>
+<p class="text-[11px] text-on-surface-variant">Executive digest of ledger activity.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gold-accent"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Security Section -->
+<section class="col-span-12 lg:col-span-6 bg-surface-container-lowest rounded-[2rem] p-8 shadow-sm border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-gold-accent">verified_user</span>
+<h3 class="text-xl font-headline font-bold text-tertiary">Security Vault</h3>
+</div>
+<div class="space-y-6">
+<div class="p-6 bg-tertiary text-white rounded-[1.5rem] relative overflow-hidden group">
+<div class="relative z-10 flex items-center justify-between">
+<div>
+<p class="text-sm font-bold">Two-Factor Authentication</p>
+<p class="text-[11px] text-slate-400 mt-1">Fortify your account access protocols.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-white/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gold-accent"></div>
+</label>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+</div>
+<div class="space-y-4">
+<p class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Change Credentials</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-2">
+<input class="w-full bg-surface border border-outline-variant/20 rounded-xl py-3 px-4 text-sm focus:ring-2 focus:ring-gold-accent/20" placeholder="Current password" type="password"/>
+</div>
+<div>
+<input class="w-full bg-surface border border-outline-variant/20 rounded-xl py-3 px-4 text-sm focus:ring-2 focus:ring-gold-accent/20" placeholder="New password" type="password"/>
+</div>
+<div>
+<input class="w-full bg-surface border border-outline-variant/20 rounded-xl py-3 px-4 text-sm focus:ring-2 focus:ring-gold-accent/20" placeholder="Confirm password" type="password"/>
+</div>
+</div>
+<button class="text-xs font-bold text-gold-accent hover:text-amber-600 transition-colors uppercase tracking-widest">Update Vault Entry →</button>
+</div>
+</div>
+</section>
+<!-- Data Archiving / Deletion (Extra value) -->
+<section class="col-span-12 p-8 bg-error-container/20 rounded-[2rem] border-2 border-dashed border-error/10 flex items-center justify-between">
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 rounded-full bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined">delete_forever</span>
+</div>
+<div>
+<h4 class="text-lg font-headline font-bold text-tertiary">Dangerous Waters</h4>
+<p class="text-sm text-on-surface-variant">Permanently deactivate your ledger and erase all fiscal history.</p>
+</div>
+</div>
+<button class="px-6 py-3 border-2 border-error text-error font-bold rounded-xl text-xs uppercase tracking-widest hover:bg-error hover:text-white transition-all">
+                        Terminate Account
+                    </button>
+</section>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Suppressed on Web via Shell Visibility & Relevance Logic) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white shadow-[0_-10px_30px_rgba(0,0,0,0.05)] h-16 flex items-center justify-around z-50">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="dashboard">dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="receipt_long">receipt_long</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-amber-600" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+</a>
+</nav>
+</body></html>

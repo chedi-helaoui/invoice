@@ -1,0 +1,93 @@
+@import "@/styles/variables.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-8;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: $on-surface;
+  margin-bottom: $spacing-1;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: $on-surface-variant;
+}
+
+.tableSection {
+  background-color: $surface-container-lowest;
+  padding: $spacing-6;
+  border-radius: 16px;
+  @include ambient-shadow;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.modalContent {
+  background-color: $surface-container-low;
+  padding: $spacing-8;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  @include ambient-shadow;
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: $spacing-6;
+    color: $on-surface;
+  }
+}
+
+.modalClose {
+  position: absolute;
+  top: $spacing-4;
+  right: $spacing-4;
+  background: transparent;
+  border: none;
+  color: $on-surface-variant;
+  cursor: pointer;
+  padding: $spacing-1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &:hover {
+    background-color: $surface-container-highest;
+    color: $on-surface;
+  }
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4;
+  
+  .error {
+    color: #ff5252;
+    font-size: 0.875rem;
+    margin: 0;
+  }
+}

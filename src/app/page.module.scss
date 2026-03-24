@@ -1,0 +1,51 @@
+@import "@/styles/variables.scss";
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-8;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: $on-surface;
+  margin-bottom: $spacing-1;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: $on-surface-variant;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: $spacing-6;
+}
+
+.recentSection {
+  background-color: $surface-container-lowest;
+  padding: $spacing-6;
+  border-radius: 16px;
+  @include ambient-shadow;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-6;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    font-size: 1.5rem;
+    color: $on-surface;
+  }
+}

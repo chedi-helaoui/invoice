@@ -1,0 +1,78 @@
+@import "@/styles/variables.scss";
+
+.sidebar {
+  width: 260px;
+  background-color: $tertiary;
+  color: #eff1f3; // inverse-on-surface
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-6;
+  flex-shrink: 0;
+
+  // The "Sovereign Base" - Authoritative tones
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: $spacing-3;
+  margin-bottom: $spacing-8;
+}
+
+.logoMark {
+  width: 32px;
+  height: 32px;
+  background-color: $primary;
+  border-radius: 4px;
+}
+
+.logoText {
+  font-family: $font-manrope;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+  flex: 1;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: $spacing-3;
+  padding: $spacing-3;
+  border-radius: 8px;
+  font-family: $font-inter;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.2s ease;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+  }
+
+  &.active {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #f59e0b; // gold-accent
+    transform: scale(0.98);
+    font-weight: 700;
+  }
+}
+
+.bottomNav {
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: $spacing-4;
+}

@@ -1,0 +1,38 @@
+@import "@/styles/variables.scss";
+
+// Use a full corner radius.
+// Do not use heavy solid colors. Use a 10% opacity background of the status color 
+// with a high-contrast text color.
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px $spacing-3;
+  border-radius: 999px; // full
+  font-family: $font-inter;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.paid {
+  // e.g. success
+  background-color: rgba(32, 17, 0, 0.1); 
+  color: $primary-container;
+}
+
+.overdue {
+  background-color: rgba(186, 26, 26, 0.1);
+  color: $on-error-container;
+}
+
+.pending {
+  background-color: rgba(245, 158, 11, 0.1); // primary low opacity
+  color: $primary-container;
+}
+
+.draft {
+  background-color: rgba(69, 71, 76, 0.1); // on-surface-variant diff
+  color: $on-surface-variant;
+}

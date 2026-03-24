@@ -1,0 +1,53 @@
+@import "@/styles/variables.scss";
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-3 $spacing-6;
+  font-family: $font-inter;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  gap: $spacing-2;
+  
+  // High-value CTAs and critical financial highlights
+}
+
+.primary {
+  // Primary Button must use primary_fixed_dim
+  // It should feel like a physical gold ingot
+  background: linear-gradient(145deg, $primary, $primary-container);
+  color: $on-primary-container;
+  border-radius: 0.75rem; // xl corner radius
+  
+  &:hover {
+    filter: brightness(1.1);
+  }
+  
+  &:active {
+    filter: brightness(0.95);
+  }
+}
+
+.secondary {
+  background-color: transparent;
+  color: $on-surface;
+  @include ghost-border;
+  border-radius: 8px;
+  
+  &:hover {
+    background-color: rgba(0,0,0,0.02);
+  }
+}
+
+.ghost {
+  background-color: transparent;
+  color: $on-surface;
+  border-radius: 8px;
+  
+  &:hover {
+    background-color: rgba(0,0,0,0.04);
+  }
+}
